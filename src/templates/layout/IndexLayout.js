@@ -9,7 +9,6 @@ console.log("constants: ", colors)
 const IndexLayout = () => {
   return (
     <Grid>
-      <div class="navigation">Navigation will go here</div>
       <div class="index-carousel">
         <Carousel></Carousel>
       </div>
@@ -49,14 +48,15 @@ const IndexLayout = () => {
 export default IndexLayout
 
 const Grid = styled.main`
+  padding-top: 7rem;
   background: ${colors.white};
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: auto auto auto auto auto;
   gap: 0px 0px;
+  padding: 120px 1rem 1rem 1rem;
 
   grid-template-areas:
-    "navigation navigation navigation navigation navigation navigation"
     "index-carousel index-carousel index-carousel index-carousel index-carousel index-carousel"
     "image-text-content image-text-content image-text-content  image-text-content side-bar-right side-bar-right"
     "collections-container collections-container collections-container collections-container  side-bar-right side-bar-right"
@@ -66,10 +66,6 @@ const Grid = styled.main`
     max-width: 1600px;
   }
 
-  .navigation {
-    grid-area: navigation;
-    height: 75px;
-  }
   .index-carousel {
     max-width: 1600px;
     margin: auto;
