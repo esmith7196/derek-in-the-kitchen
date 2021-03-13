@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Carousel from "../../components/Carousel/Carousel"
 import { colors } from "../../style/constants"
+import Button from "../../components/UI/Button"
 
 console.log("constants: ", colors)
 
@@ -30,7 +31,11 @@ const IndexLayout = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, neque
             exercitationem, maxime ea deserunt praesentium libero sapiente numq
           </p>
-          <button>Button</button>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, neque
+            exercitationem, maxime ea deserunt praesentium libero sapiente numq
+          </p>
+          <Button>Read More About Me</Button>
         </div>
       </div>
 
@@ -80,6 +85,7 @@ const Grid = styled.main`
     height: 450px;
     max-width: 1600px;
     margin-left: 100px;
+    align-items: center;
     .img-left {
       grid-area: img-left;
     }

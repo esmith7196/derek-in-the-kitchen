@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 const MainImage = ({ image }) => {
   return (
-    <ActiveCarouselImage src={image} alt="ADD ALT TAG"></ActiveCarouselImage>
+    <ActiveCarouselImage src={image.src} alt={image.alt}></ActiveCarouselImage>
   )
 }
 

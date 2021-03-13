@@ -23,6 +23,14 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `c23wuv0z5o05`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: `G05N6WRH0uS8oKAqBUdb7OJIedxCAYcIoz4Mv1DJtT4`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // The property ID; the tracking code won't be generated without it
