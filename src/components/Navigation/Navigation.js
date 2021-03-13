@@ -6,7 +6,7 @@ import styled from "styled-components"
 import { MdMenu, MdClose } from "react-icons/md"
 
 import logo from "../../assets/logo.png"
-import { reusable, colors } from "../../style/constants"
+import { reusable, colors, breakpoints } from "../../style/constants"
 import Container from "../UI/Container"
 import navItems from "../../data/navItems"
 
@@ -97,7 +97,7 @@ const Nav = styled.nav`
   }
 
   .hamburger-container {
-    @media (min-width: 768px) {
+    @media (min-width: ${breakpoints.tablet}) {
       display: none;
     }
   }
@@ -105,7 +105,7 @@ const Nav = styled.nav`
   .items-desktop {
     display: none;
 
-    @media (min-width: 768px) {
+    @media (min-width: ${breakpoints.tablet}) {
       display: flex;
     }
   }
@@ -157,7 +157,7 @@ const NavItem = styled.div`
     text-transform: uppercase;
     transition: all 0.3s;
     font-weight: bold;
-    @media (min-width: 768px) {
+    @media (min-width: ${breakpoints.tablet}) {
       font-size: 1rem;
     }
     &:hover {

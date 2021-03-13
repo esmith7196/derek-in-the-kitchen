@@ -8,10 +8,10 @@ import "./layout.css"
 import Navigation from "../components/Navigation/Navigation"
 
 const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Raleway&display=swap');
+
   body {
     background: ${colors.white};
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', cursive;
   }
 `
 

@@ -23,16 +23,13 @@ exports.createPages = async ({ graphql, actions }) => {
               measurement
             }
             mainImage {
-              fluid {
-                src
+              fluid(maxWidth: 1900, quality: 95) {
+                srcWebp
               }
             }
             prepTime
             servings
             steps {
-              raw
-            }
-            alternativeIngredients {
               raw
             }
             featured
@@ -48,7 +45,7 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         // Data passed to context is available
         // in page queries as GraphQL variables.
-        slug: slugify(node.title, { lower: true }),
+        ...node,
       },
     })
   })
