@@ -5,8 +5,14 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import { reusable, colors, font } from "../style/constants"
 import Container from "../components/UI/Container"
+import RecipeDetailsContainer from "../components/RecipeDetailsContainer/RecipeDetailsContainer"
 
 const Recipe = ({ pageContext }) => {
+  const detailsData = {
+    cookTime: pageContext.cook,
+    prepTime: pageContext.prepTime,
+    servings: pageContext.servings,
+  }
   return (
     <Layout>
       <StyledRecipe>
@@ -15,6 +21,7 @@ const Recipe = ({ pageContext }) => {
             <img src={pageContext.mainImage.fluid.srcWebp} alt="" />
             <h1>{pageContext.title}</h1>
           </RecipeImage>
+          <RecipeDetailsContainer data={detailsData}></RecipeDetailsContainer>
         </Container>
       </StyledRecipe>
     </Layout>
