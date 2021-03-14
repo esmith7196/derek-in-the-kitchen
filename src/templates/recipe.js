@@ -7,6 +7,7 @@ import { reusable, colors, font } from "../style/constants"
 import Container from "../components/UI/Container"
 import RecipeDetailsContainer from "../components/RecipeDetailsContainer/RecipeDetailsContainer"
 import RecipeTabs from "../components/RecipeTabs/RecipeTabs"
+import MasonryPhotoGallery from "../components/Masonry/MasonryPhotoGallery"
 
 const Recipe = ({ pageContext }) => {
   const detailsData = {
@@ -26,6 +27,7 @@ const Recipe = ({ pageContext }) => {
           <div className="recipe-tabs">
             <RecipeTabs data={pageContext}></RecipeTabs>
           </div>
+          <MasonryPhotoGallery photos={pageContext.extraImages} />
         </Container>
       </StyledRecipe>
     </Layout>
@@ -36,6 +38,10 @@ export default Recipe
 
 const StyledRecipe = styled.main`
   padding: 120px 1rem 1rem 1rem;
+
+  .recipe-tabs {
+    margin-bottom: 1.5rem;
+  }
 `
 
 const RecipeImage = styled.div`

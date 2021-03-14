@@ -27,6 +27,13 @@ exports.createPages = async ({ graphql, actions }) => {
                 srcWebp
               }
             }
+            extraImages {
+              fluid(maxWidth: 1500, quality: 95) {
+                src
+              }
+              description
+              title
+            }
             prepTime
             servings
             steps {

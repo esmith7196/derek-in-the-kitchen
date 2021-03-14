@@ -6,7 +6,7 @@ import "react-tabs/style/react-tabs.css"
 import styled from "styled-components"
 
 import Ingredient from "../Ingredient/Ingredient"
-import { colors } from "../../style/constants"
+import { colors, font } from "../../style/constants"
 
 const RecipeTabs = ({ data }) => {
   const renderIngredientsList = () =>
@@ -44,7 +44,9 @@ const RecipeTabs = ({ data }) => {
         <TabPanel>{renderIngredientsList()}</TabPanel>
         <TabPanel>{renderRichText(data.steps)}</TabPanel>
         <TabPanel>
-          <h2>Render Story here!</h2>
+          <div className="story-text">
+            {renderRichText(data.fullDescription)}
+          </div>
         </TabPanel>
       </Tabs>
     </StyledTabs>
@@ -61,8 +63,18 @@ const StyledTabs = styled.div`
   }
   background: white;
   border-radius: 30px;
-  padding: 0.25rem;
+  padding: 0.5rem;
   .react-tabs__tab-list {
     border: none;
+  }
+  .story-text {
+    h1 {
+      font-family: ${font.primary};
+      color: ${colors.primary};
+    }
+    p {
+      margin-bottom: 0.75rem;
+      line-height: 1.75;
+    }
   }
 `
