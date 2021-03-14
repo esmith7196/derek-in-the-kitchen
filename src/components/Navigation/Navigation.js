@@ -77,6 +77,7 @@ export default Navigation
 
 const Nav = styled.nav`
   position: fixed;
+  z-index: 999;
   top: 0;
   width: 100%;
   padding: 0.25rem 1rem;

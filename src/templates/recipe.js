@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import { reusable, colors, font } from "../style/constants"
 import Container from "../components/UI/Container"
 import RecipeDetailsContainer from "../components/RecipeDetailsContainer/RecipeDetailsContainer"
+import RecipeTabs from "../components/RecipeTabs/RecipeTabs"
 
 const Recipe = ({ pageContext }) => {
   const detailsData = {
@@ -22,6 +23,9 @@ const Recipe = ({ pageContext }) => {
             <h1>{pageContext.title}</h1>
           </RecipeImage>
           <RecipeDetailsContainer data={detailsData}></RecipeDetailsContainer>
+          <div className="recipe-tabs">
+            <RecipeTabs data={pageContext}></RecipeTabs>
+          </div>
         </Container>
       </StyledRecipe>
     </Layout>
