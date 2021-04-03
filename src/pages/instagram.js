@@ -18,7 +18,7 @@ const Instagram = ({ data }) => {
         hovered={hoveredPhoto === node.permalink}
       >
         <a href={node.permalink} target="_blank">
-          <Fade bottom delay={400 * idx}>
+          <Fade bottom delay={500 + (idx + 1)}>
             <div className="ig-photo-container">
               <img src={node.media_url} alt={node.caption} />
               {hoveredPhoto === node.permalink ? (
@@ -61,6 +61,7 @@ const InstagramDisplay = styled.section`
 const Photo = styled.div`
   width: 50%;
   padding: 1rem;
+  transition: all 0.5s;
 
   @media (min-width: ${breakpoints.tablet}) {
     width: 33%;
@@ -70,6 +71,7 @@ const Photo = styled.div`
   }
 
   img {
+    transition: all 0.5s;
     height: 100%;
     object-fit: cover;
     border-radius: ${reusable.borderRadius};
