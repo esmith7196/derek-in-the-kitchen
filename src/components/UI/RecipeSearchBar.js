@@ -1,15 +1,20 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
+
+import SearchContext from "../../context/searchContext"
 
 import { MdSearch } from "react-icons/md"
 import { colors, reusable, font } from "../../style/constants"
 
-const RecipeSearchBar = () => {
+const RecipeSearchBar = ({ setSearchState, searchState }) => {
   return (
     <div className="form-element">
       <Desc>Search for a recipe</Desc>
       <Label htmlFor="">
-        <input></input>
+        <input
+          value={searchState}
+          onChange={e => setSearchState(e.target.value)}
+        ></input>
         <span>
           <MdSearch></MdSearch>
         </span>

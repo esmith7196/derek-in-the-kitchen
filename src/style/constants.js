@@ -23,7 +23,8 @@ export const breakpoints = {
   xs: "200px",
   mobile: "350px",
   tablet: "769px",
-  fullHd: "1920px",
+  desktop: "1200px",
+  fullHd: "1700px",
 }
 
 export const font = {

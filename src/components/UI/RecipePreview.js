@@ -1,7 +1,7 @@
 import { node } from "prop-types"
 import React from "react"
 import styled from "styled-components"
-import { font, reusable } from "../../style/constants"
+import { font, reusable, breakpoints } from "../../style/constants"
 
 const RecipePreview = ({ data }) => {
   const {
@@ -53,5 +53,12 @@ const PreviewDetails = styled.div`
     font-weight: 900;
     font-family: ${font.primary};
     margin-bottom: 8px;
+
+    @media (min-width: ${breakpoints.desktop}) {
+      font-size: 32px;
+    }
+    @media (min-width: ${breakpoints.fullHd}) {
+      font-size: 42px;
+    }
   }
 `

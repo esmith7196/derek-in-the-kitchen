@@ -49,7 +49,7 @@ const Navigation = () => {
   return (
     <>
       <Nav>
-        <Container size="1200px">
+        <Container size="1600px">
           <div className="mobile-nav-content">
             <div className="nav-logo-container">
               <img src={logo} alt="Derek In The Kitchen" />
