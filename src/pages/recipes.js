@@ -67,6 +67,7 @@ const RecipesContainer = styled.div`
     flex-wrap: wrap;
     > div {
       width: 50%;
+      padding: 12px;
     }
   }
   @media (min-width: ${breakpoints.desktop}) {

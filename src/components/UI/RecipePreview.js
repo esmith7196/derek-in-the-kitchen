@@ -1,7 +1,9 @@
 import { node } from "prop-types"
 import React from "react"
+import { Link } from "gatsby"
 import styled from "styled-components"
 import { font, reusable, breakpoints } from "../../style/constants"
+import slugify from "slugify"
 
 const RecipePreview = ({ data }) => {
   const {
@@ -16,13 +18,15 @@ const RecipePreview = ({ data }) => {
 
   return (
     <Preview>
-      <PreviewImage>
-        <img src={src} alt="" />
-      </PreviewImage>
-      <PreviewDetails>
-        <h4>{title}</h4>
-        <p>{truncate(shortDescription)}</p>
-      </PreviewDetails>
+      <Link to={`/recipes/${slugify(title, { lower: true })}`}>
+        <PreviewImage>
+          <img src={src} alt="" />
+        </PreviewImage>
+        <PreviewDetails>
+          <h4>{title}</h4>
+          <p>{truncate(shortDescription)}</p>
+        </PreviewDetails>
+      </Link>
     </Preview>
   )
 }
@@ -32,16 +36,27 @@ export default RecipePreview
 const Preview = styled.div`
   display: flex;
   padding: 12px 0;
+  a {
+    display: block;
+  }
 `
 
 const PreviewImage = styled.div`
   flex: 1 1 33%;
   min-height: 105px;
+  overflow: hidden !important;
+  border-radius: ${reusable.borderRadius};
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: ${reusable.borderRadius};
+    transition: transform 0.5s;
+    &:hover {
+      border-radius: ${reusable.borderRadius};
+      transition: all 0.5s ease;
+      transform: scale(1.5);
+    }
   }
 `
 const PreviewDetails = styled.div`

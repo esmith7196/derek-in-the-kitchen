@@ -4,7 +4,7 @@ import styled from "styled-components"
 import SearchContext from "../../context/searchContext"
 
 import { MdSearch } from "react-icons/md"
-import { colors, reusable, font } from "../../style/constants"
+import { colors, reusable, font, breakpoints } from "../../style/constants"
 
 const RecipeSearchBar = ({ setSearchState, searchState }) => {
   return (
@@ -58,4 +58,9 @@ const Desc = styled.p`
   font-family: ${font.primary};
   font-size: 32px;
   font-weight: bold;
+  @media (min-width: ${breakpoints.desktop}) {
+    margin-top: 16px;
+    margin-bottom: 32px;
+    font-size: 64px;
+  }
 `
