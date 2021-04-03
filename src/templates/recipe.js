@@ -10,6 +10,8 @@ import RecipeTabs from "../components/RecipeTabs/RecipeTabs"
 import MasonryPhotoGallery from "../components/Masonry/MasonryPhotoGallery"
 
 const Recipe = ({ pageContext }) => {
+  const hasExtraImages =
+    pageContext.extraImages && pageContext.extraImages.length
   const detailsData = {
     cookTime: pageContext.cook,
     prepTime: pageContext.prepTime,
@@ -27,7 +29,11 @@ const Recipe = ({ pageContext }) => {
           <div className="recipe-tabs">
             <RecipeTabs data={pageContext}></RecipeTabs>
           </div>
-          <MasonryPhotoGallery photos={pageContext.extraImages} />
+          {hasExtraImages ? (
+            <MasonryPhotoGallery photos={pageContext.extraImages} />
+          ) : (
+            ""
+          )}
         </Container>
       </StyledRecipe>
     </Layout>

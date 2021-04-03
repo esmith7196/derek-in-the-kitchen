@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Carousel from "../../components/Carousel/Carousel"
-import { colors } from "../../style/constants"
+import { colors, breakpoints } from "../../style/constants"
 import Button from "../../components/UI/Button"
 
 console.log("constants: ", colors)
@@ -24,7 +24,7 @@ const IndexLayout = () => {
             alt="img"
           />
         </div>
-        <div class="content-right" style={{ paddingLeft: "2rem" }}>
+        <div class="content-right">
           <h2>Lorem ipsum, dolor sit amet consectetur </h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, neque
@@ -48,13 +48,17 @@ const IndexLayout = () => {
 export default IndexLayout
 
 const Grid = styled.main`
+  display: block;
   padding-top: 7rem;
   background: ${colors.white};
-  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: auto auto auto auto auto;
   gap: 0px 0px;
   padding: 120px 1rem 1rem 1rem;
+
+  @media (min-width: ${breakpoints.tablet}) {
+    display: grid;
+  }
 
   grid-template-areas:
     "index-carousel index-carousel index-carousel index-carousel index-carousel index-carousel"
@@ -72,7 +76,7 @@ const Grid = styled.main`
     grid-area: index-carousel;
   }
   .image-text-content {
-    display: grid;
+    display: block;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     gap: 0px 0px;
@@ -80,8 +84,21 @@ const Grid = styled.main`
     grid-area: image-text-content;
     height: 450px;
     max-width: 1600px;
-    margin-left: 100px;
+
     align-items: center;
+
+    p {
+      margin-bottom: 0.5rem;
+      line-height: 1.75;
+      &:last-of-type {
+        margin-bottom: 2rem;
+      }
+    }
+
+    @media (min-width: ${breakpoints.tablet}) {
+      display: grid;
+      margin-left: 100px;
+    }
     .img-left {
       grid-area: img-left;
     }
@@ -98,7 +115,10 @@ const Grid = styled.main`
     height: 775px;
     background: white;
     border-radius: 30px;
-    margin-right: 100px;
+
+    @media (min-width: ${breakpoints.tablet}) {
+      margin-right: 100px;
+    }
   }
   .footer {
     grid-area: footer;
