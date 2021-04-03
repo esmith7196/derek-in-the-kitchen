@@ -1,12 +1,19 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Derek In The Kitchen`,
+    description: `Welcome To Derek In The Kitchen.`,
+    author: `@ericsmith`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
+    {
+      resolve: `gatsby-source-instagram-all`,
+      options: {
+        access_token:
+          "IGQVJXdDNOUGRvdURPYVYzakN2VUc4ZAzRzSUtrSlVDTDkyVDBGRDRGM0gyUGdDZA3Ixa0xjY3A2aGRmNHhXV2ZAsQ2UwR2NxbWFSZAUlHRGZATS3hFaGExMW5IckN6ZAWVKVGs3X2dhUHVTTldoQm5Cd3BNOQZDZD",
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
