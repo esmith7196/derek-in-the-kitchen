@@ -1,5 +1,4 @@
 import React from "react"
-import styled from "styled-components"
 
 const Ingredient = ({ data }) => {
   const { amount, ingredient, measurement } = data

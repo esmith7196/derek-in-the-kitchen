@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import styled from "styled-components"
 import { FaInstagram } from "react-icons/fa"
 import Fade from "react-reveal/Fade"
@@ -17,7 +17,7 @@ const Instagram = ({ data }) => {
         onMouseLeave={() => setHoveredPhoto("")}
         hovered={hoveredPhoto === node.permalink}
       >
-        <a href={node.permalink} target="_blank">
+        <a href={node.permalink} target="_blank" rel="noreferrer">
           <Fade bottom delay={500 + (idx + 1)}>
             <div className="ig-photo-container">
               <img src={node.media_url} alt={node.caption} />
@@ -40,7 +40,11 @@ const Instagram = ({ data }) => {
         Follow me{" "}
         <span>
           <FaInstagram></FaInstagram>{" "}
-          <a target="_blank" href="https://www.instagram.com/derekinthekitchen">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.instagram.com/derekinthekitchen"
+          >
             DerekInTheKitchen
           </a>
         </span>

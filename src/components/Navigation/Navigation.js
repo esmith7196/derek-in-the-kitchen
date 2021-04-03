@@ -37,7 +37,13 @@ const Navigation = () => {
             </Flip>
           ))}
           <Flip left delay={(navItems.length + 1) * 250}>
-            <div className="close-nav" onClick={toggleNav}>
+            <div
+              role="button"
+              className="close-nav"
+              tabIndex={0}
+              onClick={toggleNav}
+              onKeyDown={toggleNav}
+            >
               <MdClose color={colors.alternate} size={"60px"}></MdClose>
             </div>
           </Flip>
@@ -60,7 +66,7 @@ const Navigation = () => {
               </div>
               <div className="items-desktop">
                 {navItems.map(itm => (
-                  <NavItem desktop>
+                  <NavItem key={itm.title} desktop>
                     <Link to={itm.ref}>{itm.title}</Link>
                   </NavItem>
                 ))}
@@ -137,11 +143,14 @@ const OpenNavigation = styled.div`
     flex-direction: column;
   }
   .close-nav {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     flex: 1;
     background: ${colors.dark};
+    @media (min-width: ${breakpoints.tablet}) {
+      display: flex;
+    }
   }
 `
 

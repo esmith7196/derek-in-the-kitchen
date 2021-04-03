@@ -1,4 +1,4 @@
-export default [
+const items = [
   {
     title: "Home",
     ref: "/",
@@ -24,3 +24,5 @@ export default [
     ref: "/instagram",
   },
 ]
+
+export default items

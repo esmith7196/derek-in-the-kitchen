@@ -1,7 +1,5 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
-
-import SearchContext from "../../context/searchContext"
 
 import { MdSearch } from "react-icons/md"
 import { colors, reusable, font, breakpoints } from "../../style/constants"

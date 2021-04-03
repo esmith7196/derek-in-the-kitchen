@@ -1,6 +1,5 @@
 import React from "react"
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
-import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import "react-tabs/style/react-tabs.css"
 import styled from "styled-components"
@@ -16,21 +15,22 @@ const RecipeTabs = ({ data }) => {
       </ul>
     ))
 
-  const options = {
-    renderNode: {
-      [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
-      [BLOCKS.EMBEDDED_ASSET]: node => {
-        return (
-          <>
-            <h2>Embedded Asset</h2>
-            <pre>
-              <code>{JSON.stringify(node, null, 2)}</code>
-            </pre>
-          </>
-        )
-      },
-    },
-  }
+  // todo implement options if needed. else delete.
+  // const options = {
+  //   renderNode: {
+  //     [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
+  //     [BLOCKS.EMBEDDED_ASSET]: node => {
+  //       return (
+  //         <>
+  //           <h2>Embedded Asset</h2>
+  //           <pre>
+  //             <code>{JSON.stringify(node, null, 2)}</code>
+  //           </pre>
+  //         </>
+  //       )
+  //     },
+  //   },
+  // }
 
   return (
     <StyledTabs>

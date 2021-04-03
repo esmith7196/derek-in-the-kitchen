@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { MdAvTimer, MdRestaurant, MdPerson } from "react-icons/md"
 
-import { reusable, colors } from "../../style/constants"
+import { reusable } from "../../style/constants"
 
 const RecipeDetailsContainer = ({ data }) => {
   const iconSize = "30px"
