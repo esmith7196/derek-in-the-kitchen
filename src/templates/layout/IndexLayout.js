@@ -54,7 +54,7 @@ const Grid = styled.main`
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: auto auto auto auto auto;
   gap: 0px 0px;
-  padding: 120px 1rem 1rem 1rem;
+  padding: 225px 1rem 1rem 1rem;
 
   @media (min-width: ${breakpoints.tablet}) {
     display: grid;

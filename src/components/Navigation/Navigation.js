@@ -92,6 +92,9 @@ const Nav = styled.nav`
 
   .nav-logo-container {
     max-width: 125px;
+    @media (min-width: ${breakpoints.tablet}) {
+      max-width: 175px;
+    }
     img {
       display: flex;
     }
@@ -101,6 +104,10 @@ const Nav = styled.nav`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media (min-width: ${breakpoints.tablet}) {
+      flex-direction: column;
+      padding: 16px 0;
+    }
   }
 
   .hamburger-container {
@@ -143,13 +150,13 @@ const OpenNavigation = styled.div`
     flex-direction: column;
   }
   .close-nav {
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex: 1;
     background: ${colors.dark};
     @media (min-width: ${breakpoints.tablet}) {
-      display: flex;
+      display: none;
     }
   }
 `
@@ -160,6 +167,16 @@ const NavItem = styled.div`
   text-align: center;
   position: relative;
 
+  @media (min-width: ${breakpoints.tablet}) {
+    margin-top: 16px;
+    padding: 0;
+    /* padding: 0px 16px 0 16px; */
+    /* margin-top: 16px; */
+    /* border-left: 1px solid ${colors.secondary}; */
+    text-align: center;
+    /* border-right: 1px solid ${colors.primary}; */
+  }
+
   a {
     color: ${({ desktop }) => (desktop ? colors.dark : "white")};
     text-decoration: none;
@@ -167,12 +184,20 @@ const NavItem = styled.div`
     text-transform: uppercase;
     transition: all 0.3s;
     font-weight: bold;
+
     @media (min-width: ${breakpoints.tablet}) {
       font-size: 1rem;
+      padding: 8px 16px;
+      border-radius: ${reusable.borderRadius};
     }
+
     &:hover {
       color: ${colors.primary};
       transition: all 0.3s;
+      @media (min-width: ${breakpoints.tablet}) {
+        background: ${colors.primary};
+        color: white;
+      }
     }
   }
   .small-border {

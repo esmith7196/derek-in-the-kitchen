@@ -76,7 +76,7 @@ const contact = ({ data }) => {
 export default contact
 
 const Page = styled.section`
-  padding: 120px 16px 16px 16px;
+  padding: 225px 16px 16px 16px;
 `
 
 const Grid = styled.div`

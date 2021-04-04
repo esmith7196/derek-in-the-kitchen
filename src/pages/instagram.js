@@ -108,7 +108,7 @@ const Title = styled.h1`
   font-size: 64px;
   font-weight: bold;
   text-align: center;
-  padding-top: 120px;
+  padding-top: 225px;
   font-family: ${font.primary};
 
   @media (min-width: ${breakpoints.tablet}) {
