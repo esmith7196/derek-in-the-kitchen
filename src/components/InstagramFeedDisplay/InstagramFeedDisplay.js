@@ -7,22 +7,7 @@ const InstagramFeedDisplay = () => {
     errorMessage: "",
   })
   useEffect(() => {
-    // const getData = async () => {
-    //   //   const data = await fetch(`/netlify/functions/fetchHashTags`)
-    //   try {
-    //     const response = await fetch(`/.netlify/functions/fetchHashTags`)
-    //     const body = await response.json()
-    //     console.log("awaiting body", body)
-
-    //     console.log(body)
-    //     setHashtags(body)
-    //   } catch (e) {
-    //     console.error("There was an issue getting : ", e)
-    //   }
-    // }
-    // getData()
-
-    fetch("/.netlify/functions/fetchHashTags")
+    fetch("/.netlify/functions/hell-world")
       .then(res => {
         console.log(res)
       })

@@ -2,18 +2,34 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 import Flip from "react-reveal/Flip"
 import Fade from "react-reveal/Fade"
+import Slide from "react-reveal/Slide"
 import styled from "styled-components"
 import { MdMenu, MdClose } from "react-icons/md"
+import { CSSTransition } from "react-transition-group"
 
 import logo from "../../assets/logo.png"
 import { reusable, colors, breakpoints } from "../../style/constants"
 import Container from "../UI/Container"
 import navItems from "../../data/navItems"
+import { useScrollPosition } from "../../hooks/useScrollPosition"
 
 const Navigation = () => {
   const [navIsOpen, setNavIsOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
   const toggleNav = () => setNavIsOpen(!navIsOpen)
+
+  useScrollPosition(({ prevPos, currPos }) => {
+    // console.log(currPos.x)
+    // console.log(currPos.y)
+    console.log(Math.sign(currPos.y))
+
+    if (Math.sign(currPos.y) === -1) {
+      setScrolled(true)
+    } else {
+      setScrolled(false)
+    }
+  })
 
   if (navIsOpen) {
     return (
@@ -54,37 +70,132 @@ const Navigation = () => {
 
   return (
     <>
-      <Nav>
-        <Container size="1600px">
-          <div className="mobile-nav-content">
-            <div className="nav-logo-container">
-              <img src={logo} alt="Derek In The Kitchen" />
-            </div>
-            <div className="nav-right">
-              <div className="hamburger-container">
-                <MdMenu onClick={toggleNav} size={"35px"}></MdMenu>
+      <LT>
+        <CSSTransition in={!scrolled} timeout={9999999999} classNames="my-node">
+          <Nav>
+            {console.log("yea")}
+            {scrolled ? (
+              ""
+            ) : (
+              <p
+                style={{
+                  fontWeight: "100",
+                  fontSize: "12px",
+                  position: "absolute",
+                  zIndex: "999999999999",
+                  cursor: "pointer",
+                  "&:hover": {
+                    fontSize: "94px",
+                  },
+                }}
+              >
+                Just follow me already @DerekInTheKitchen.{" "}
+                <span style={{ fontSize: "14px" }}>👩‍🍳</span>
+              </p>
+            )}
+            <Container size="1600px">
+              <div className="mobile-nav-content">
+                <div className="nav-logo-container">
+                  <img src={logo} alt="Derek In The Kitchen" />
+                </div>
+                <div className="nav-right">
+                  <div className="hamburger-container">
+                    <MdMenu onClick={toggleNav} size={"35px"}></MdMenu>
+                  </div>
+                  <div className="items-desktop">
+                    {navItems.map(itm => (
+                      <NavItem key={itm.title} desktop>
+                        <Link to={itm.ref}>{itm.title}</Link>
+                      </NavItem>
+                    ))}
+                  </div>
+                </div>
               </div>
-              <div className="items-desktop">
-                {navItems.map(itm => (
-                  <NavItem key={itm.title} desktop>
-                    <Link to={itm.ref}>{itm.title}</Link>
-                  </NavItem>
-                ))}
+            </Container>
+          </Nav>
+        </CSSTransition>
+      </LT>
+      <LT>
+        <CSSTransition
+          in={!scrolled}
+          timeout={9999999999}
+          classNames="my-node-alt"
+        >
+          <Nav reverse>
+            <Container size="1600px">
+              <div className="mobile-nav-content">
+                <div className="nav-right">
+                  <div className="hamburger-container">
+                    <MdMenu onClick={toggleNav} size={"35px"}></MdMenu>
+                  </div>
+                  <div className="items-desktop">
+                    {navItems.map(itm => (
+                      <NavItem key={itm.title} desktop>
+                        <Link to={itm.ref}>{itm.title}</Link>
+                      </NavItem>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </Container>
-      </Nav>
+            </Container>
+          </Nav>
+        </CSSTransition>
+      </LT>
     </>
   )
 }
 
 export default Navigation
 
+const BottomNav = styled.div`
+  nav {
+    position: fixed !important;
+    bottom: 0 !important;
+    width: 100%;
+    left: 0;
+    height: 20px;
+    overflow: hidden;
+  }
+`
+
+const LT = styled.div`
+  .my-node-enter {
+    opacity: 0;
+  }
+  .my-node-enter-active {
+    opacity: 1;
+    transition: ease opacity 425ms;
+  }
+  .my-node-exit {
+    opacity: 1;
+  }
+  .my-node-exit-active {
+    opacity: 0;
+    transition: ease opacity 650ms;
+  }
+
+  .my-node-alt-enter {
+    opacity: 1;
+  }
+  .my-node-alt-enter-active {
+    opacity: 0;
+    transition: ease opacity 425ms;
+  }
+  .my-node-alt-exit {
+    opacity: 0;
+  }
+  .my-node-alt-exit-active {
+    opacity: 1;
+    transition: ease opacity 650ms;
+  }
+`
+
 const Nav = styled.nav`
   position: fixed;
   z-index: 999;
   top: 0;
+  ${({ reverse }) =>
+    reverse ? "bottom: 0; top: unset;" : "top: 0; bottom: unset"};
   width: 100%;
   padding: 0.25rem 1rem;
   box-shadow: ${reusable.boxShadow};

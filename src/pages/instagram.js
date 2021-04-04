@@ -10,6 +10,23 @@ import { breakpoints, colors, font, reusable } from "../style/constants"
 const Instagram = ({ data }) => {
   const [hoveredPhoto, setHoveredPhoto] = useState("")
   const photos = data.allInstagramContent.edges
+
+  const renderHashTags = txt => {
+    const textAsArray = txt.split(" ")
+    console.log(
+      "🚀 ~ file: instagram.js ~ line 16 ~ renderHashTags ~ textAsArray",
+      textAsArray
+    )
+    const hashTagWords = textAsArray
+      .filter(word => word.includes("#"))
+      .map(word => word.replace(/^\s+|\s+$/g, ""))
+    console.log(
+      "🚀 ~ file: instagram.js ~ line 23 ~ Instagram ~ hashTagWords",
+      hashTagWords
+    )
+    return ""
+  }
+
   const renderPhotos = () =>
     photos.map(({ node }, idx) => (
       <Photo
@@ -24,6 +41,7 @@ const Instagram = ({ data }) => {
               {hoveredPhoto === node.permalink ? (
                 <Fade left>
                   <p className="caption">{node.caption}</p>
+                  {renderHashTags(node.caption)}
                 </Fade>
               ) : (
                 ""
@@ -108,7 +126,7 @@ const Title = styled.h1`
   font-size: 64px;
   font-weight: bold;
   text-align: center;
-  padding-top: 225px;
+  padding-top: 0px;
   font-family: ${font.primary};
 
   @media (min-width: ${breakpoints.tablet}) {

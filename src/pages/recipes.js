@@ -55,7 +55,7 @@ const Recipes = ({ data }) => {
 export default Recipes
 
 const Page = styled.section`
-  padding: 225px 1rem 1rem 1rem;
+  padding: 0px 1rem 1rem 1rem;
 `
 
 const RecipesContainer = styled.div`

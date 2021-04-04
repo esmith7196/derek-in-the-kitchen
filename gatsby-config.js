@@ -1,4 +1,17 @@
+const { createProxyMiddleware } = require("http-proxy-middleware") //v1.x.x
+
 module.exports = {
+  // developMiddleware: app => {
+  //   app.use(
+  //     "/.netlify/lambda/",
+  //     createProxyMiddleware({
+  //       target: "http://localhost:9000",
+  //       pathRewrite: {
+  //         "/.netlify/functions/": "",
+  //       },
+  //     })
+  //   )
+  // },
   siteMetadata: {
     title: `Derek In The Kitchen`,
     description: `Welcome To Derek In The Kitchen.`,
@@ -14,6 +27,7 @@ module.exports = {
           "IGQVJXdDNOUGRvdURPYVYzakN2VUc4ZAzRzSUtrSlVDTDkyVDBGRDRGM0gyUGdDZA3Ixa0xjY3A2aGRmNHhXV2ZAsQ2UwR2NxbWFSZAUlHRGZATS3hFaGExMW5IckN6ZAWVKVGs3X2dhUHVTTldoQm5Cd3BNOQZDZD",
       },
     },
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {

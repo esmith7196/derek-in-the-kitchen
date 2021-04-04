@@ -42,7 +42,7 @@ const Recipe = ({ pageContext }) => {
 export default Recipe
 
 const StyledRecipe = styled.main`
-  padding: 225px 1rem 1rem 1rem;
+  padding: 0px 1rem 1rem 1rem;
 
   .recipe-tabs {
     margin-bottom: 1.5rem;

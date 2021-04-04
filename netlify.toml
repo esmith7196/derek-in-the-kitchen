@@ -1,5 +1,13 @@
 [build]
-	functions = "functions/"
-	publish = "src/"
-[dev]
-	publish = "src/"
+
+
+ functions = "functions-build"
+
+
+ command = "npm run build"
+
+
+ publish = "public"
+
+
+[template.environment]
