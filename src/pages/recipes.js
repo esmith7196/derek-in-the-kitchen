@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import RecipeSearchBar from "../components/UI/RecipeSearchBar"
 import RecipePreview from "../components/UI/RecipePreview"
 import { reusable, breakpoints } from "../style/constants"
-import SearchContext from "../context/searchContext"
+import SearchContext from "../context/SearchContext"
 import Container from "../components/UI/Container"
 
 const Recipes = ({ data }) => {
