@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     background: ${colors.white};
     font-family: 'Raleway', cursive;
+    padding-top: calc(198.7px + 18px);
   }
 `
 
