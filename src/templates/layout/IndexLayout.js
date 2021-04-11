@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
 import Carousel from "../../components/Carousel/Carousel"
 import { colors, breakpoints } from "../../style/constants"
 import Button from "../../components/UI/Button"
@@ -34,7 +35,9 @@ const IndexLayout = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, neque
             exercitationem, maxime ea deserunt praesentium libero sapiente numq
           </p>
-          <Button>Read More About Me</Button>
+          <Link to="/about">
+            <Button>Read More About Me</Button>
+          </Link>
         </div>
       </div>
 
