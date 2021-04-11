@@ -6,12 +6,11 @@ import slugify from "slugify"
 
 const RecipePreview = ({ data }) => {
   const {
-    mainImage: {
-      fluid: { src },
-    },
     title,
     shortDescription: { shortDescription },
   } = data.node
+
+  const { mainImage } = data.node
 
   const truncate = str => str.substring(0, 50)
 
@@ -19,7 +18,7 @@ const RecipePreview = ({ data }) => {
     <Preview>
       <Link to={`/recipes/${slugify(title, { lower: true })}`}>
         <PreviewImage>
-          <img src={src} alt="" />
+          <img src={mainImage ? mainImage.fluid.src : ""} alt={title} />
         </PreviewImage>
         <PreviewDetails>
           <h4>{title}</h4>

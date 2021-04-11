@@ -4,7 +4,7 @@ const path = require("path")
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const result = await graphql(`
-    query {
+    {
       allContentfulRecipe {
         edges {
           node {
@@ -45,6 +45,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
+  console.log("Result.data: ", result)
   result.data.allContentfulRecipe.edges.forEach(({ node }) => {
     createPage({
       path: `recipes/${slugify(node.title, { lower: true })}`,
