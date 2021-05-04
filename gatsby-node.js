@@ -19,7 +19,6 @@ exports.createPages = async ({ graphql, actions }) => {
             }
             ingredient {
               ingredient
-              amount
               measurement
             }
             mainImage {

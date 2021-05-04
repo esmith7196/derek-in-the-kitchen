@@ -38,7 +38,7 @@ const RecipeTabs = ({ data }) => {
         <TabList>
           <Tab>Ingredients</Tab>
           <Tab>Instructions</Tab>
-          <Tab>Story</Tab>
+          <Tab>About this recipe</Tab>
         </TabList>
 
         <TabPanel>{renderIngredientsList()}</TabPanel>

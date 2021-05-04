@@ -16,6 +16,7 @@ export const colors = {
 
 export const reusable = {
   boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+  boxShadowSubtle: "rgba(0, 0, 0, 0.35) 0px 5px 30px",
   borderRadius: "30px",
 }
 

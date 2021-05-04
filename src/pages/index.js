@@ -10,7 +10,6 @@ const IndexPage = () => (
   <Layout>
     <IndexLayout />
     <InstagramFeedDisplay />
-    <IGDisplay></IGDisplay>
   </Layout>
 )
 

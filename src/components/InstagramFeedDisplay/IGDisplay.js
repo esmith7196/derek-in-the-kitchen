@@ -6,9 +6,7 @@ import IGCard from "./IGCard"
 const IGDisplay = () => {
   return (
     <Layout>
-      <Page>
-        <IGCard></IGCard>
-      </Page>
+      <Page></Page>
     </Layout>
   )
 }
