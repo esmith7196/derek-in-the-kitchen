@@ -15,59 +15,59 @@ import { breakpoints, colors, font } from "../style/constants"
 import ContactForm from "../components/Forms/ContactForm"
 
 const contact = ({ data }) => {
-  const {
-    title,
-    description: { description },
-    // includeTheContactForm,
-  } = data.contentfulContactPage
-  const links = data.allContentfulLinks.edges
+  //   const {
+  //     title,
+  //     description: { description },
+  //     // includeTheContactForm,
+  //   } = data.contentfulContactPage
+  //   const links = data.allContentfulLinks.edges
 
-  const renderLinks = () => {
-    return links.map(({ node }) => {
-      return (
-        <li key={node.url}>
-          <span>{getIcon(node.type)}</span>
-          <a href={node.url}>{node.title}</a>
-        </li>
-      )
-    })
-  }
+  //   const renderLinks = () => {
+  //     return links.map(({ node }) => {
+  //       return (
+  //         <li key={node.url}>
+  //           <span>{getIcon(node.type)}</span>
+  //           <a href={node.url}>{node.title}</a>
+  //         </li>
+  //       )
+  //     })
+  //   }
 
-  const getIcon = ico => {
-    console.log(ico)
-    switch (ico) {
-      case "instagram":
-        return <FaInstagram color={colors.primary} size={"30px"} />
-      case "twitter":
-        return <FaTwitter />
-      case "email":
-        return <FaMailBulk color={colors.primary} size={"30px"} />
-      case "phone":
-        return <FaMobile />
-      case "facebook":
-        return <FaFacebookSquare />
-      case "youtube":
-        return <FaYoutube />
-      case "address":
-        return <FaMapPin />
-      default:
-        return ""
-    }
-  }
+  //   const getIcon = ico => {
+  //     console.log(ico)
+  //     switch (ico) {
+  //       case "instagram":
+  //         return <FaInstagram color={colors.primary} size={"30px"} />
+  //       case "twitter":
+  //         return <FaTwitter />
+  //       case "email":
+  //         return <FaMailBulk color={colors.primary} size={"30px"} />
+  //       case "phone":
+  //         return <FaMobile />
+  //       case "facebook":
+  //         return <FaFacebookSquare />
+  //       case "youtube":
+  //         return <FaYoutube />
+  //       case "address":
+  //         return <FaMapPin />
+  //       default:
+  //         return ""
+  //     }
+  //   }
 
   return (
     <Layout>
       <Page>
-        <Grid>
+        {/* <Grid>
           <div className="details">
-            <Title>{title}</Title>
-            <Description>{description}</Description>
-            <ul>{renderLinks()}</ul>
+            <Title>{title || ""}</Title>
+            <Description>{description || ""}</Description>
+            <ul>{false && renderLinks()}</ul>
           </div>
           <div className="form">
             <ContactForm />
           </div>
-        </Grid>
+        </Grid> */}
       </Page>
     </Layout>
   )
@@ -110,23 +110,23 @@ const Description = styled.p`
   margin-bottom: 1rem;
 `
 
-export const query = graphql`
-  {
-    contentfulContactPage {
-      title
-      description {
-        description
-      }
-      includeTheContactForm
-    }
-    allContentfulLinks {
-      edges {
-        node {
-          url
-          type
-          title
-        }
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   {
+//     contentfulContactPage {
+//       title
+//       description {
+//         description
+//       }
+//       includeTheContactForm
+//     }
+//     allContentfulLinks {
+//       edges {
+//         node {
+//           url
+//           type
+//           title
+//         }
+//       }
+//     }
+//   }
+// `

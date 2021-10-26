@@ -9,7 +9,6 @@ import { breakpoints, colors, font, reusable } from "../style/constants"
 
 const Instagram = ({ data }) => {
   const [hoveredPhoto, setHoveredPhoto] = useState("")
-  const photos = data.allInstagramContent.edges
 
   const renderHashTags = txt => {
     const textAsArray = txt.split(" ")
@@ -26,32 +25,6 @@ const Instagram = ({ data }) => {
     )
     return ""
   }
-
-  const renderPhotos = () =>
-    photos.map(({ node }, idx) => (
-      <Photo
-        onMouseEnter={() => setHoveredPhoto(node.permalink)}
-        onMouseLeave={() => setHoveredPhoto("")}
-        hovered={hoveredPhoto === node.permalink}
-      >
-        <a href={node.permalink} target="_blank" rel="noreferrer">
-          <Fade bottom delay={500 + (idx + 1)}>
-            <div className="ig-photo-container">
-              <img src={node.media_url} alt={node.caption} />
-              {hoveredPhoto === node.permalink ? (
-                <Fade left>
-                  <p className="caption">{node.caption}</p>
-                  {renderHashTags(node.caption)}
-                </Fade>
-              ) : (
-                ""
-              )}
-            </div>
-          </Fade>
-        </a>
-      </Photo>
-    ))
-
   return (
     <Layout>
       <Title>
@@ -67,7 +40,7 @@ const Instagram = ({ data }) => {
           </a>
         </span>
       </Title>
-      <InstagramDisplay>{renderPhotos()}</InstagramDisplay>
+      {/* <InstagramDisplay>{renderPhotos()}</InstagramDisplay> */}
     </Layout>
   )
 }
@@ -149,21 +122,6 @@ const Title = styled.h1`
 
     a {
       color: ${colors.primary};
-    }
-  }
-`
-
-export const query = graphql`
-  {
-    allInstagramContent {
-      edges {
-        node {
-          username
-          media_url
-          caption
-          permalink
-        }
-      }
     }
   }
 `

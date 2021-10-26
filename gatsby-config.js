@@ -20,13 +20,13 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
-    {
-      resolve: `gatsby-source-instagram-all`,
-      options: {
-        access_token:
-          "IGQVJXdDNOUGRvdURPYVYzakN2VUc4ZAzRzSUtrSlVDTDkyVDBGRDRGM0gyUGdDZA3Ixa0xjY3A2aGRmNHhXV2ZAsQ2UwR2NxbWFSZAUlHRGZATS3hFaGExMW5IckN6ZAWVKVGs3X2dhUHVTTldoQm5Cd3BNOQZDZD",
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-instagram-all`,
+    //   options: {
+    //     access_token:
+    //       "IGQVJXdDNOUGRvdURPYVYzakN2VUc4ZAzRzSUtrSlVDTDkyVDBGRDRGM0gyUGdDZA3Ixa0xjY3A2aGRmNHhXV2ZAsQ2UwR2NxbWFSZAUlHRGZATS3hFaGExMW5IckN6ZAWVKVGs3X2dhUHVTTldoQm5Cd3BNOQZDZD",
+    //   },
+    // },
 
     {
       resolve: `gatsby-source-filesystem`,
@@ -44,11 +44,17 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-contentful`,
+      resolve: `gatsby-source-sanity`,
       options: {
-        spaceId: `c23wuv0z5o05`,
-        // Learn about environment variables: https://gatsby.dev/env-vars
-        accessToken: `G05N6WRH0uS8oKAqBUdb7OJIedxCAYcIoz4Mv1DJtT4`,
+        projectId: `b0ci9s83`,
+        dataset: `production`,
+        // a token with read permissions is required
+        // if you have a private dataset
+        token: process.env.SANITY_TOKEN,
+
+        // If the Sanity GraphQL API was deployed using `--tag <name>`,
+        // use `graphqlTag` to specify the tag name. Defaults to `default`.
+        graphqlTag: "default",
       },
     },
     {

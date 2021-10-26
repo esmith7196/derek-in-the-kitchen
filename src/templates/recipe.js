@@ -21,7 +21,7 @@ const Recipe = ({ pageContext }) => {
       <StyledRecipe>
         <Container size="1600px">
           <RecipeImage>
-            <img src={pageContext.mainImage.fluid.srcWebp} alt="" />
+            <img src={pageContext?.mainImage?.fluid?.srcWebp} alt="" />
             <h1>{pageContext.title}</h1>
           </RecipeImage>
           <RecipeDetailsContainer data={detailsData}></RecipeDetailsContainer>

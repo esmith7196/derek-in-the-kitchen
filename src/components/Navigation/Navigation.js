@@ -73,26 +73,6 @@ const Navigation = () => {
       <LT>
         <CSSTransition in={!scrolled} timeout={9999999999} classNames="my-node">
           <Nav>
-            {console.log("yea")}
-            {scrolled ? (
-              ""
-            ) : (
-              <p
-                style={{
-                  fontWeight: "100",
-                  fontSize: "12px",
-                  position: "absolute",
-                  zIndex: "999999999999",
-                  cursor: "pointer",
-                  "&:hover": {
-                    fontSize: "94px",
-                  },
-                }}
-              >
-                Just follow me already @DerekInTheKitchen.{" "}
-                <span style={{ fontSize: "14px" }}>👩‍🍳</span>
-              </p>
-            )}
             <Container size="1600px">
               <div className="mobile-nav-content">
                 <div className="nav-logo-container">

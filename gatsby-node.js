@@ -5,53 +5,42 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const result = await graphql(`
     {
-      allContentfulRecipe {
+      allSanityProduct {
         edges {
           node {
             title
-            shortDescription {
-              shortDescription
+            tags
+            slug {
+              current
             }
-            cookTime
-            createdAt(formatString: "MMMM")
-            fullDescription {
-              raw
-            }
-            ingredient {
-              ingredient
-              measurement
-            }
-            mainImage {
-              fluid(maxWidth: 1900, quality: 95) {
-                srcWebp
+            id
+            defaultProductVariant {
+              price
+              taxable
+              title
+              images {
+                asset {
+                  url
+                }
               }
             }
-            extraImages {
-              fluid(maxWidth: 1500, quality: 95) {
-                src
-              }
-              description
+            categories {
               title
             }
-            prepTime
-            servings
-            steps {
-              raw
+            body {
+              _rawEn
             }
-            featured
+            blurb
           }
         }
       }
     }
   `)
-  console.log("Result.data: ", result)
-  result.data.allContentfulRecipe.edges.forEach(({ node }) => {
+  result.data.allSanityProduct.edges.forEach(({ node }) => {
     createPage({
-      path: `recipes/${slugify(node.title, { lower: true })}`,
-      component: path.resolve(`./src/templates/recipe.js`),
+      path: `menu/${node.slug.current}`,
+      component: path.resolve(`./src/templates/MenuItemTemplate.js`),
       context: {
-        // Data passed to context is available
-        // in page queries as GraphQL variables.
         ...node,
       },
     })

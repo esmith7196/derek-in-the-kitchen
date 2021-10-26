@@ -4,24 +4,16 @@ const items = [
     ref: "/",
   },
   {
-    title: "About",
-    ref: "/about",
+    title: "Gallery",
+    ref: "/gallery",
   },
   {
-    title: "Recipes",
-    ref: "/recipes",
+    title: "Menu",
+    ref: "/menu",
   },
   {
     title: "Contact",
     ref: "/contact",
-  },
-  {
-    title: "My Creations",
-    ref: "/creations",
-  },
-  {
-    title: "Instagram",
-    ref: "/instagram",
   },
 ]
 

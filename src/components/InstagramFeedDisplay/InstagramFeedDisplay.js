@@ -5,31 +5,15 @@ import BasicIGCard from "./BasicIGCard"
 import { breakpoints } from "../../style/constants"
 
 const InstagramFeedDisplay = () => {
-  const data = useStaticQuery(graphql`
-    query IGQuery {
-      allInstagramContent(limit: 10) {
-        edges {
-          node {
-            username
-            timestamp
-            caption
-            media_url
-          }
-        }
-      }
-    }
-  `)
-  console.log("sdfsdfsd", data)
-
   return (
     <FeedDisplay>
-      <div>
+      {/* <div>
         {data.allInstagramContent.edges.map(({ node }) => (
           <Column>
             <BasicIGCard data={node}></BasicIGCard>
           </Column>
         ))}
-      </div>
+      </div> */}
     </FeedDisplay>
   )
 }
