@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Eric Smith <ericsmith.100@gmail.com>",
   "dependencies": {
+    "@sanity/block-content-to-react": "^3.0.0",
     "axios": "^0.21.1",
     "babel-plugin-styled-components": "^1.12.0",
     "dayjs": "^1.10.4",

@@ -1,7 +1,7 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { createGlobalStyle } from "styled-components"
-import { colors } from "../style/constants"
+import { breakpoints, colors } from "../style/constants"
 
 import "./layout.css"
 import Navigation from "../components/Navigation/Navigation"
@@ -12,6 +12,9 @@ const GlobalStyle = createGlobalStyle`
     background: ${colors.white};
     font-family: 'Raleway', cursive;
     padding-top: 100px;
+	@media (min-width: ${breakpoints.desktop}) {
+		padding-top: 225px;
+	}
   }
 `
 
