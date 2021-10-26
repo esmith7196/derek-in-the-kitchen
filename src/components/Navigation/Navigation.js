@@ -12,6 +12,7 @@ import { reusable, colors, breakpoints } from "../../style/constants"
 import Container from "../UI/Container"
 import navItems from "../../data/navItems"
 import { useScrollPosition } from "../../hooks/useScrollPosition"
+import MobileNavbar from "../MobileNavbar"
 
 const Navigation = () => {
   const [navIsOpen, setNavIsOpen] = useState(false)
@@ -20,10 +21,6 @@ const Navigation = () => {
   const toggleNav = () => setNavIsOpen(!navIsOpen)
 
   useScrollPosition(({ prevPos, currPos }) => {
-    // console.log(currPos.x)
-    // console.log(currPos.y)
-    console.log(Math.sign(currPos.y))
-
     if (Math.sign(currPos.y) === -1) {
       setScrolled(true)
     } else {
@@ -73,6 +70,10 @@ const Navigation = () => {
       <LT>
         <CSSTransition in={!scrolled} timeout={9999999999} classNames="my-node">
           <Nav>
+            <MobileLogoContainer>
+              <img src={logo} alt="Derek In The Kitchen" />
+            </MobileLogoContainer>
+
             <Container size="1600px">
               <div className="mobile-nav-content">
                 <div className="nav-logo-container">
@@ -121,6 +122,7 @@ const Navigation = () => {
           </Nav>
         </CSSTransition>
       </LT>
+      <MobileNavbar></MobileNavbar>
     </>
   )
 }
@@ -178,8 +180,12 @@ const Nav = styled.nav`
     reverse ? "bottom: 0; top: unset;" : "top: 0; bottom: unset"};
   width: 100%;
   padding: 0.25rem 1rem;
-  box-shadow: ${reusable.boxShadow};
+
   background: ${colors.white};
+
+  @media (min-width: ${breakpoints.desktop}) {
+    box-shadow: ${reusable.boxShadow};
+  }
 
   .nav-logo-container {
     max-width: 125px;
@@ -195,6 +201,11 @@ const Nav = styled.nav`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    display: none;
+
+    @media (min-width: ${breakpoints.desktop}) {
+      display: block;
+    }
     @media (min-width: ${breakpoints.tablet}) {
       flex-direction: column;
       padding: 16px 0;
@@ -303,5 +314,15 @@ const NavItem = styled.div`
       background-color: white;
       opacity: 0.3;
     }
+  }
+`
+
+const MobileLogoContainer = styled.div`
+  text-align: center;
+  img {
+    max-width: 100px;
+  }
+  @media (min-width: ${breakpoints.desktop}) {
+    display: none;
   }
 `
