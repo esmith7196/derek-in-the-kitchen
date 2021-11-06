@@ -15,23 +15,10 @@ const GlobalStyle = createGlobalStyle`
 	p, a {
 		font-family: 'Raleway', sans-serif;
 	}
-	@media (min-width: ${breakpoints.desktop}) {
-		padding-top: 225px;
-	}
   }
 `
 
 const Layout = ({ children }) => {
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `)
-
   return (
     <>
       <GlobalStyle />

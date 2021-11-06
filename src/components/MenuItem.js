@@ -1,7 +1,7 @@
 import React from "react"
 import Styled from "styled-components"
 import { Link } from "gatsby"
-import { colors, font, reusable } from "../style/constants"
+import { breakpoints, colors, font, reusable } from "../style/constants"
 
 const MenuItem = props => {
   const { blurb, categories, slug, title, defaultProductVariant } = props.data
@@ -44,6 +44,10 @@ const Item = Styled.div`
   height: 100%;
   transition: all .25s;
 
+  @media (min-width: ${breakpoints.tablet}) {
+	  min-height: 167px;
+  }
+
   &:hover {
 	  box-shadow: ${boxShadowSubtle};
 	  transition: all .25s;
@@ -82,6 +86,11 @@ const ItemImage = Styled.img`
   border-radius: ${borderRadius};
   width: 100px;
   object-fit: cover;
+  aspect-ratio: 1 / 1;
+  height: 100%;
 
-  
+
+  @media (min-width: ${breakpoints.tablet}) {
+	width: 130px;
+  }
 `

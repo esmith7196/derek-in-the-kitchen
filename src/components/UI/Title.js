@@ -26,7 +26,7 @@ const getSize = size => {
 				font-size: 4.5rem;
 			}
 			@media (min-width: ${breakpoints.fullHd}) {
-				font-size: 5.5rem;
+				font-size: 5rem;
 			}
 		`
   }

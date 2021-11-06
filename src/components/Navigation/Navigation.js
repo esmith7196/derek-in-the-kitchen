@@ -58,7 +58,7 @@ const Nav = styled.nav`
   @media (min-width: ${breakpoints.desktop}) {
     box-shadow: ${reusable.boxShadow};
     background: ${colors.white};
-    position: absolute;
+    position: static;
   }
 
   .nav-logo-container {
