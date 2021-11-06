@@ -17,6 +17,10 @@ const Navigation = () => {
   return (
     <>
       <Nav>
+        <MobileLogo>
+          <img src={logo} alt="Derek In The Kitchen"></img>
+        </MobileLogo>
+
         <Container size="1600px">
           <div className="mobile-nav-content">
             <div className="nav-logo-container">
@@ -153,5 +157,15 @@ const NavItem = styled.div`
       background-color: white;
       opacity: 0.3;
     }
+  }
+`
+
+const MobileLogo = styled.div`
+  text-align: center;
+  img {
+    width: 175px;
+  }
+  @media (min-width: ${breakpoints.tablet}) {
+    display: none;
   }
 `
