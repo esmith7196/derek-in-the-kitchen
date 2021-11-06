@@ -193,6 +193,7 @@ const Nav = styled.nav`
     max-width: 125px;
     @media (min-width: ${breakpoints.tablet}) {
       max-width: 175px;
+      margin: auto;
     }
     img {
       display: flex;
@@ -225,6 +226,7 @@ const Nav = styled.nav`
 
     @media (min-width: ${breakpoints.tablet}) {
       display: flex;
+      justify-content: center;
     }
   }
 `

@@ -42,6 +42,10 @@ const Flex = styled.div`
   display: flex;
   flex-wrap: wrap;
 
+  @media (min-width: ${breakpoints.desktop}) {
+    padding-top: 3rem;
+  }
+
   > div {
     width: 100%;
     @media (min-width: ${breakpoints.tablet}) {

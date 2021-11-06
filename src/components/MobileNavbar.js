@@ -8,7 +8,7 @@ import {
 } from "react-icons/md"
 import navItems from "../data/navItems"
 import { Link } from "gatsby"
-import { colors, reusable } from "../style/constants"
+import { breakpoints, colors, reusable } from "../style/constants"
 
 const MobileNavbar = () => {
   const iconSize = 32
@@ -51,6 +51,10 @@ const StyledBottomNav = styled.div`
   padding: 8px;
   background: ${colors.white};
   box-shadow: ${reusable.boxShadow};
+
+  @media (min-width: ${breakpoints.tablet}) {
+    display: none;
+  }
 
   .items {
     display: flex;
