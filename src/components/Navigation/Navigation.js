@@ -173,7 +173,7 @@ const LT = styled.div`
 `
 
 const Nav = styled.nav`
-  position: fixed;
+  position: static;
   z-index: 999;
   top: 0;
   ${({ reverse }) =>
@@ -181,10 +181,12 @@ const Nav = styled.nav`
   width: 100%;
   padding: 0.25rem 1rem;
 
-  background: ${colors.white};
+  background: none;
 
   @media (min-width: ${breakpoints.desktop}) {
     box-shadow: ${reusable.boxShadow};
+    background: ${colors.white};
+    position: fixed;
   }
 
   .nav-logo-container {
@@ -320,7 +322,7 @@ const NavItem = styled.div`
 const MobileLogoContainer = styled.div`
   text-align: center;
   img {
-    max-width: 100px;
+    max-width: 200px;
   }
   @media (min-width: ${breakpoints.desktop}) {
     display: none;

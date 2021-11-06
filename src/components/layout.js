@@ -10,8 +10,11 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     background: ${colors.white};
-    font-family: 'Raleway', cursive;
-    padding-top: 100px;
+    font-family: 'Raleway', sans-serif;
+    padding-top: 0;
+	p, a {
+		font-family: 'Raleway', sans-serif;
+	}
 	@media (min-width: ${breakpoints.desktop}) {
 		padding-top: 225px;
 	}
