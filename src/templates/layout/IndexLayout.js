@@ -43,7 +43,7 @@ const Flex = styled.div`
   flex-wrap: wrap;
 
   @media (min-width: ${breakpoints.desktop}) {
-    padding-top: 3rem;
+    padding-top: 4.5rem;
   }
 
   > div {
@@ -54,6 +54,7 @@ const Flex = styled.div`
       }
       &.right {
         width: 66.66%;
+        padding-left: 2rem;
       }
     }
   }

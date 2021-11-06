@@ -16,161 +16,46 @@ import MobileNavbar from "../MobileNavbar"
 
 const Navigation = () => {
   const [navIsOpen, setNavIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
 
   const toggleNav = () => setNavIsOpen(!navIsOpen)
 
-  useScrollPosition(({ prevPos, currPos }) => {
-    if (Math.sign(currPos.y) === -1) {
-      setScrolled(true)
-    } else {
-      setScrolled(false)
-    }
-  })
-
-  if (navIsOpen) {
-    return (
-      <OpenNavigation>
-        <Fade left delay={250}>
-          <div className="left">
-            <div>
-              <img src={logo} alt="Derek In The Kitchen" />
-            </div>
-          </div>
-        </Fade>
-        <div className="right">
-          {navItems.map((itm, idx) => (
-            <Flip left delay={(idx + 1) * 250}>
-              <NavItem>
-                <Link to={itm.ref}>{itm.title}</Link>
-                <div className="small-border">
-                  <span></span>
-                </div>
-              </NavItem>
-            </Flip>
-          ))}
-          <Flip left delay={(navItems.length + 1) * 250}>
-            <div
-              role="button"
-              className="close-nav"
-              tabIndex={0}
-              onClick={toggleNav}
-              onKeyDown={toggleNav}
-            >
-              <MdClose color={colors.alternate} size={"60px"}></MdClose>
-            </div>
-          </Flip>
-        </div>
-      </OpenNavigation>
-    )
-  }
+  //   useScrollPosition(({ prevPos, currPos }) => {
+  //     if (Math.sign(currPos.y) === -1) {
+  //       setScrolled(true)
+  //     } else {
+  //       setScrolled(false)
+  //     }
+  //   })
 
   return (
     <>
-      <LT>
-        <CSSTransition in={!scrolled} timeout={9999999999} classNames="my-node">
-          <Nav>
-            <MobileLogoContainer>
+      <Nav>
+        <Container size="1600px">
+          <div className="mobile-nav-content">
+            <div className="nav-logo-container">
               <img src={logo} alt="Derek In The Kitchen" />
-            </MobileLogoContainer>
-
-            <Container size="1600px">
-              <div className="mobile-nav-content">
-                <div className="nav-logo-container">
-                  <img src={logo} alt="Derek In The Kitchen" />
-                </div>
-                <div className="nav-right">
-                  <div className="hamburger-container">
-                    <MdMenu onClick={toggleNav} size={"35px"}></MdMenu>
-                  </div>
-                  <div className="items-desktop">
-                    {navItems.map(itm => (
-                      <NavItem key={itm.title} desktop>
-                        <Link to={itm.ref}>{itm.title}</Link>
-                      </NavItem>
-                    ))}
-                  </div>
-                </div>
+            </div>
+            <div className="nav-right">
+              <div className="hamburger-container">
+                <MdMenu onClick={toggleNav} size={"35px"}></MdMenu>
               </div>
-            </Container>
-          </Nav>
-        </CSSTransition>
-      </LT>
-      <LT>
-        <CSSTransition
-          in={!scrolled}
-          timeout={9999999999}
-          classNames="my-node-alt"
-        >
-          <Nav reverse>
-            <Container size="1600px">
-              <div className="mobile-nav-content">
-                <div className="nav-right">
-                  <div className="hamburger-container">
-                    <MdMenu onClick={toggleNav} size={"35px"}></MdMenu>
-                  </div>
-                  <div className="items-desktop">
-                    {navItems.map(itm => (
-                      <NavItem key={itm.title} desktop>
-                        <Link to={itm.ref}>{itm.title}</Link>
-                      </NavItem>
-                    ))}
-                  </div>
-                </div>
+              <div className="items-desktop">
+                {navItems.map(itm => (
+                  <NavItem key={itm.title} desktop>
+                    <Link to={itm.ref}>{itm.title}</Link>
+                  </NavItem>
+                ))}
               </div>
-            </Container>
-          </Nav>
-        </CSSTransition>
-      </LT>
+            </div>
+          </div>
+        </Container>
+      </Nav>
       <MobileNavbar></MobileNavbar>
     </>
   )
 }
 
 export default Navigation
-
-const BottomNav = styled.div`
-  nav {
-    position: fixed !important;
-    bottom: 0 !important;
-    width: 100%;
-    left: 0;
-    height: 20px;
-    overflow: hidden;
-  }
-`
-
-const LT = styled.div`
-  .my-node-enter {
-    opacity: 0;
-  }
-  .my-node-enter-active {
-    opacity: 1;
-    transition: ease opacity 425ms;
-  }
-  .my-node-exit {
-    opacity: 1;
-  }
-  .my-node-exit-active {
-    opacity: 0;
-    transition: ease opacity 650ms;
-  }
-
-  .my-node-alt-enter {
-    opacity: 1;
-  }
-  .my-node-alt-enter-active {
-    opacity: 0;
-    transition: ease opacity 425ms;
-  }
-  .my-node-alt-exit {
-    opacity: 0;
-  }
-  .my-node-alt-exit-active {
-    opacity: 1;
-    transition: ease opacity 650ms;
-  }
-`
 
 const Nav = styled.nav`
   position: static;
@@ -186,7 +71,7 @@ const Nav = styled.nav`
   @media (min-width: ${breakpoints.desktop}) {
     box-shadow: ${reusable.boxShadow};
     background: ${colors.white};
-    position: fixed;
+    position: absolute;
   }
 
   .nav-logo-container {
@@ -194,6 +79,9 @@ const Nav = styled.nav`
     @media (min-width: ${breakpoints.tablet}) {
       max-width: 175px;
       margin: auto;
+    }
+    @media (min-width: ${breakpoints.tablet}) {
+      max-width: 255px;
     }
     img {
       display: flex;
