@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import Carousel from "../../components/Carousel/Carousel"
 import { colors, breakpoints, font } from "../../style/constants"
 import Button from "../../components/UI/Button"
 import Section from "../../components/UI/Section"
