@@ -6,9 +6,10 @@ import Layout from "../components/layout"
 const Gallery = () => {
   useEffect(() => {
     axios
-      .get("./netlify/functions/instagram-scraper")
+      .get("/.netlify/functions/instagram-scraper")
       .then(res => {
         console.log("res: ", res)
+        return res
       })
       .catch(e => console.log(e))
   }, [])

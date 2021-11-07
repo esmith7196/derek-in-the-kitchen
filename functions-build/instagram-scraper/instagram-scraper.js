@@ -6,9 +6,14 @@ const handler = async event => {
   InstaClient.getProfilePosts("derekinthekitchen", "20")
     .then(posts => {
       console.log(posts)
-      return posts
+      return {
+        statusCode: 200,
+        body: JSON.stringify(posts),
+      }
     })
-    .catch(err => console.error(err))
+    .catch(e => {
+      return { statusCode: 500, body: e.toString() }
+    })
 }
 
 module.exports = { handler }
