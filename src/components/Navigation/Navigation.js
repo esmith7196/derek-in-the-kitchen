@@ -58,12 +58,10 @@ const Nav = styled.nav`
   padding: 0.25rem 1rem;
 
   background: none;
+  box-shadow: ${reusable.boxShadow};
+  background: ${colors.white};
 
-  @media (min-width: ${breakpoints.desktop}) {
-    box-shadow: ${reusable.boxShadow};
-    background: ${colors.white};
-    position: static;
-  }
+  position: static;
 
   .nav-logo-container {
     max-width: 125px;

@@ -93,6 +93,10 @@ const CarouselImage = styled.div`
     object-position: center;
     object-fit: cover;
     border-radius: ${reusable.borderRadius};
+    max-width: 350px;
+    @media (min-width: ${breakpoints.tablet}) {
+      max-width: none;
+    }
   }
 `
 
@@ -106,7 +110,7 @@ const Flex = styled.div`
 
   > div {
     width: 100%;
-    @media (min-width: ${breakpoints.tablet}) {
+    @media (min-width: ${breakpoints.desktop}) {
       &.left {
         width: 33.33%;
       }
@@ -134,6 +138,9 @@ const Box = styled.div`
     width: 100%;
     height: auto;
     @media (min-width: ${breakpoints.tablet}) {
+      max-width: 500px;
+    }
+    @media (min-width: ${breakpoints.desktop}) {
       max-width: none;
     }
   }

@@ -43,13 +43,28 @@ const Flex = styled.div`
 
   > div {
     width: 100%;
+    &.right {
+      padding-top: 2rem;
+      max-width: 350px;
+    }
+
     @media (min-width: ${breakpoints.tablet}) {
       &.right {
         width: 33.33%;
+        max-width: none;
       }
       &.left {
         width: 66.66%;
-        padding-left: 2rem;
+        padding-right: 1.5rem;
+      }
+    }
+    @media (min-width: ${breakpoints.desktop}) {
+      &.right {
+        width: 33.33%;
+        padding-top: 0;
+      }
+      &.left {
+        width: 66.66%;
       }
     }
   }

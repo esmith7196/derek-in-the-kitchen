@@ -8,6 +8,6 @@ const Section = ({ children }) => {
 export default Section
 
 const StyledSection = Styled.section`
-  padding: 1rem 1.5rem;
-  padding-bottom: 5rem;
+  padding: 3rem 1.5rem;
+  /* padding-bottom: 5rem; */
 `
