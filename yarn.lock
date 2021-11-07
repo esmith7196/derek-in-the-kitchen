@@ -11232,6 +11232,11 @@ schema-utils@^3.0, schema-utils@^3.0.0, schema-utils@^3.1.0, schema-utils@^3.1.1
     ajv "^6.12.5"
     ajv-keywords "^3.5.2"
 
+scraper-instagram@^1.0.17:
+  version "1.0.17"
+  resolved "https://registry.yarnpkg.com/scraper-instagram/-/scraper-instagram-1.0.17.tgz#76165ee1448f701357b41d0f14a22b2b01dcb610"
+  integrity sha512-nSCPAMA9vtr+dF+XmZw2kT4JN8AN4rUNrBNxIwRhWpRZNrCZ3ml+zwSON174rocv+Kpx2iTBLGi4ziIdn0KjDQ==
+
 semver-diff@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/semver-diff/-/semver-diff-3.1.1.tgz#05f77ce59f325e00e2706afd67bb506ddb1ca32b"
