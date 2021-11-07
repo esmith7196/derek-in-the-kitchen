@@ -14,6 +14,7 @@ import Layout from "../components/layout"
 import { breakpoints, colors, font } from "../style/constants"
 import ContactForm from "../components/Forms/ContactForm"
 import Title from "../components/UI/Title"
+import ContactCard from "../components/contact/ContactCard"
 
 const contact = ({ data }) => {
   //   const {
@@ -70,6 +71,7 @@ const contact = ({ data }) => {
             <Title>{mainHeadingText}</Title>
           </div>
         </Overlay>
+        <ContactCard />
       </Page>
     </Layout>
   )
