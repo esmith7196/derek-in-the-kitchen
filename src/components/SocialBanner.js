@@ -33,4 +33,6 @@ export default SocialBanner
 const SolidBanner = styled.section`
   background-color: ${colors.primary};
   height: 300px;
+
+  text-align: center;
 `

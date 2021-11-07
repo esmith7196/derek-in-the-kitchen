@@ -16,6 +16,10 @@ const GlobalStyle = createGlobalStyle`
 		font-family: 'Raleway', sans-serif;
 	}
   }
+  .slide .legend {
+    background-color: rgba(0,0,0,.8)!important;
+	opacity: 1!important;
+  }
 `
 
 const Layout = ({ children }) => {
