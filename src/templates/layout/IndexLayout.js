@@ -62,6 +62,7 @@ const IndexLayout = ({ productImages }) => {
                 infiniteLoop={true}
                 animationHandler="fade"
                 autoFocus={true}
+                swipeable={false}
               >
                 {productImages
                   .filter(prod => prod.defaultProductVariant.images.length)
