@@ -68,11 +68,10 @@ const Nav = styled.nav`
   .nav-logo-container {
     max-width: 125px;
     @media (min-width: ${breakpoints.tablet}) {
-      max-width: 175px;
-      margin: auto;
+      max-width: 168px;
     }
     @media (min-width: ${breakpoints.tablet}) {
-      max-width: 255px;
+      max-width: 168px;
     }
     img {
       display: flex;
@@ -80,17 +79,13 @@ const Nav = styled.nav`
   }
 
   .mobile-nav-content {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: space-between;
-    display: none;
 
-    @media (min-width: ${breakpoints.desktop}) {
-      display: block;
-    }
     @media (min-width: ${breakpoints.tablet}) {
-      flex-direction: column;
       padding: 16px 0;
+      display: flex;
     }
   }
 
