@@ -54,7 +54,11 @@ const StyledTitle = styled.h1`
 `
 
 const StyledSubTitle = styled.h3`
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   font-family: ${defaultFont.text};
+
+  @media (min-width: ${breakpoints.desktop}) {
+    font-size: 2rem;
+  }
 `
