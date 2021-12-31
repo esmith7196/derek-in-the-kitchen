@@ -1,5 +1,6 @@
 import React, { useEffect } from "react"
 import axios from "axios"
+import { Grid } from "@horacioh/gatsby-theme-instagram"
 
 import Layout from "../components/layout"
 
@@ -14,7 +15,11 @@ const Gallery = () => {
       .catch(e => console.log(e))
   }, [])
 
-  return <Layout>Hi</Layout>
+  return (
+    <Layout>
+      <Grid />
+    </Layout>
+  )
 }
 
 export default Gallery

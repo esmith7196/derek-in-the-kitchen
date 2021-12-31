@@ -2,8 +2,8 @@ const Insta = require("scraper-instagram")
 const InstaClient = new Insta()
 
 const handler = async event => {
-  console.log("here!")
-  InstaClient.getProfilePosts("derekinthekitchen", "20")
+  console.log("herfdsfse!")
+  InstaClient.getProfilePosts("derekinthekitchen", "5")
     .then(posts => {
       console.log(posts)
       return {
@@ -12,6 +12,7 @@ const handler = async event => {
       }
     })
     .catch(e => {
+      console.log("in err", e)
       return { statusCode: 500, body: e.toString() }
     })
 }

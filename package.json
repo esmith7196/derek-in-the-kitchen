@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Eric Smith <ericsmith.100@gmail.com>",
   "dependencies": {
+    "@horacioh/gatsby-theme-instagram": "^0.1.6",
     "@sanity/block-content-to-react": "^3.0.0",
     "axios": "^0.21.1",
     "babel-plugin-styled-components": "^1.12.0",
@@ -20,6 +21,7 @@
     "gatsby-plugin-sharp": "^3.0.0",
     "gatsby-plugin-styled-components": "^4.0.0",
     "gatsby-source-filesystem": "^3.0.0",
+    "gatsby-source-instagram": "^0.9.0",
     "gatsby-source-instagram-all": "^3.0.5",
     "gatsby-source-sanity": "^7.0.7",
     "gatsby-transformer-sharp": "^3.0.0",

@@ -20,6 +20,19 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
+    {
+      resolve: "@horacioh/gatsby-theme-instagram",
+      options: {
+        type: `account`, // optional. `account` is the default `type` value
+        username: "derekinthekitchen",
+      },
+    },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `44809945660`,
+      },
+    },
     // {
     //   resolve: `gatsby-source-instagram-all`,
     //   options: {
