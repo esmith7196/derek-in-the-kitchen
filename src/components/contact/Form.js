@@ -1,31 +1,37 @@
 import React from "react"
 import styled from "styled-components"
-import { font, reusable } from "../../style/constants"
+import { colors, font, reusable } from "../../style/constants"
 
 const Form = () => {
   return (
-    <StyledForm>
+    <StyledForm
+      method="post"
+      netlify-honeypot="bot-field"
+      data-netlify="true"
+      name="contact"
+    >
+      <input type="hidden" name="bot-field" />
+      <input type="hidden" name="form-name" value="contact" />
       <label htmlFor="name">
         <span>Name</span>
         <input type="text" name="name" />
       </label>
-
       <label htmlFor="email">
         <span>Email</span>
         <input type="email" name="email" />
       </label>
-
       <label htmlFor="email">
         <span>Message</span>
         <textarea name="email" />
       </label>
+      <button type="submit">Send Message</button>
     </StyledForm>
   )
 }
 
 export default Form
 
-const StyledForm = styled.div`
+const StyledForm = styled.form`
   width: 100%;
 
   label {
@@ -48,5 +54,23 @@ const StyledForm = styled.div`
   }
   textarea {
     height: 150px;
+  }
+  button {
+    margin-top: 2rem;
+    border-radius: ${reusable.borderRadius};
+    background: ${colors.primary};
+    color: white;
+    font-family: ${font.text};
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.5rem 2rem;
+    border: 1px solid ${colors.primary};
+    transition: all ease 0.25s;
+    cursor: pointer;
+    &:hover {
+      background: transparent;
+      color: ${colors.primary};
+      transition: all ease 0.25s;
+    }
   }
 `

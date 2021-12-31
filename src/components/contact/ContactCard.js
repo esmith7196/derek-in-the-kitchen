@@ -36,6 +36,7 @@ export default ContactCard
 
 const Wrapper = styled.div`
   margin-top: -7rem;
+  margin-bottom: 7rem;
   padding-bottom: 8rem;
   padding: 0 1.5rem 8rem 1.5rem;
   @media (min-width: ${breakpoints.tablet}) {
