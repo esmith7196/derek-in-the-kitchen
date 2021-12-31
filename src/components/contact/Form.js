@@ -20,9 +20,9 @@ const Form = () => {
         <span>Email</span>
         <input type="email" name="email" />
       </label>
-      <label htmlFor="email">
+      <label htmlFor="message">
         <span>Message</span>
-        <textarea name="email" />
+        <textarea name="message" />
       </label>
       <button type="submit">Send Message</button>
     </StyledForm>
