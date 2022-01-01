@@ -11,6 +11,7 @@ import CategoriesRender from "../components/CategoriesRender"
 import { breakpoints, colors, font } from "../style/constants"
 import { Link } from "gatsby"
 import Container from "../components/UI/Container"
+import ItemForm from "../components/contact/ItemForm"
 
 const MenuItemTemplate = ({ pageContext }) => {
   const {
@@ -54,6 +55,7 @@ const MenuItemTemplate = ({ pageContext }) => {
               <BodyContainer>
                 <BlockContent blocks={body._rawEn} />
               </BodyContainer>
+              <ItemForm item={title} />
             </div>
           </Content>
         </Container>
