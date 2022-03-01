@@ -30,11 +30,9 @@ const MobileNavbar = () => {
     <StyledBottomNav>
       <div className="items">
         {navItems.map(item => (
-          <div className="item">
-            <Link to={`${item.ref}`} activeClassName="active">
-              {getIcon(item.title)}
-            </Link>
-          </div>
+          <Link to={`${item.ref}`} activeClassName="active">
+            <div className="item">{getIcon(item.title)}</div>
+          </Link>
         ))}
       </div>
     </StyledBottomNav>
@@ -49,6 +47,7 @@ const StyledBottomNav = styled.div`
   bottom: 0;
   width: 100%;
   padding: 8px;
+  padding-bottom: 15px;
   background: ${colors.white};
   box-shadow: ${reusable.boxShadow};
 
