@@ -8,7 +8,7 @@ const ItemForm = ({ item }) => {
       method="post"
       netlify-honeypot="bot-field"
       data-netlify="true"
-      name="contact"
+      name="Item Form"
     >
       <input type="hidden" name="bot-field" />
       <input type="hidden" name="form-name" value="contact" />
@@ -57,7 +57,7 @@ const StyledForm = styled.form`
   textarea {
     border: 2px solid #eee;
     border-radius: ${reusable.borderRadius};
-    padding: 2px 12px;
+    padding: 8px 12px;
   }
   textarea {
     height: 150px;
