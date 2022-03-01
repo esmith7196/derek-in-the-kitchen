@@ -76,7 +76,7 @@ module.exports = {
       options: {
         name: `gatsby-starter-default`,
 
-        short_name: `starter`,
+        short_name: `Derek In The Kitchen`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
