@@ -64,7 +64,11 @@ const contact = ({ data }) => {
   } = data.sanityContactPageSettings
 
   return (
-    <Layout>
+    <Layout
+      page="Contact"
+      title="Derek In The Kitchen"
+      description="For booking, questions and more please reach out to Derek today by filling out our form!"
+    >
       <Page>
         <Overlay bg={data.sanityContactPageSettings.overlayImage.asset.url}>
           <div>

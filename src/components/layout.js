@@ -6,6 +6,7 @@ import { breakpoints, colors } from "../style/constants"
 import "./layout.css"
 import Navigation from "../components/Navigation/Navigation"
 import Footer from "./Footer"
+import Seo from "../components/seo"
 
 const GlobalStyle = createGlobalStyle`
 
@@ -28,9 +29,10 @@ const GlobalStyle = createGlobalStyle`
 
 `
 
-const Layout = ({ children }) => {
+const Layout = ({ children, description, title, page }) => {
   return (
     <>
+      <Seo description={description} title={title} page={page} />
       <GlobalStyle />
       <Navigation></Navigation>
       {children}

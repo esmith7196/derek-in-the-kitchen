@@ -29,10 +29,8 @@ const IndexLayout = ({ productImages }) => {
               </Title>
               <Title type="subtitle">Local baked goods, snacks and more!</Title>
               <Text>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-                soluta quasi laboriosam voluptatibus impedit, porro sint aliquid
-                harum esse at dicta quae. Similique quibusdam ab deleniti odit?
-                Quaerat, natus esse?
+                Get locally prepared baked goods. Need something custom? Contact
+                me!
               </Text>
               <Link to="/menu">
                 <Button bold>View The Menu</Button>
@@ -47,7 +45,7 @@ const IndexLayout = ({ productImages }) => {
           <SideBySideContainer
             title="Let me cater for you"
             subtitle="Parties, holidays and more!"
-            text="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt vitae rem laborum. Sapiente, minima. Nostrum molestias molestiae autem excepturi dicta amet eligendi esse, voluptatibus vero odit quae totam, temporibus facere."
+            text="Whether it be a small birthday cake or a fully catered party, Derekinthekitchen has an option for all. No set menu so options are up to you! More details and prices discussed after initial interest!"
             btnText="Contact Me"
             btnLink="/contact"
           >

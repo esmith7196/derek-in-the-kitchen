@@ -9,7 +9,11 @@ import IndexLayout from "../templates/layout/IndexLayout"
 const IndexPage = ({ data }) => {
   const { nodes } = data.allSanityProduct
   return (
-    <Layout>
+    <Layout
+      title="Derek In The Kitchen"
+      description="Welcome to Derek In The Kitchen."
+      page="Home"
+    >
       <IndexLayout productImages={nodes} />
       {/* <InstagramFeedDisplay /> */}
     </Layout>

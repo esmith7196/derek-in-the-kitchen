@@ -15,7 +15,15 @@ const Gallery = () => {
   //       .catch(e => console.log(e))
   //   }, [])
 
-  return <Layout>{/* // <Grid /> */}</Layout>
+  return (
+    <Layout
+      page="Gallery"
+      title="Derek In The Kitchen"
+      description="View Derek's work here in the gallery."
+    >
+      {/* // <Grid /> */}
+    </Layout>
+  )
 }
 
 export default Gallery

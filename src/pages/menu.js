@@ -11,7 +11,11 @@ import Title from "../components/UI/Title"
 const Menu = ({ data }) => {
   const { edges } = data.allSanityProduct
   return (
-    <Layout>
+    <Layout
+      page="Menu"
+      title="Derek In The Kitchen"
+      description="View and order baked goods and more from Derek."
+    >
       <PageSection>
         <Container size="1400px">
           <Box>
