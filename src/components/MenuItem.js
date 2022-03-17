@@ -4,8 +4,9 @@ import { Link } from "gatsby"
 import { breakpoints, colors, font, reusable } from "../style/constants"
 
 const MenuItem = props => {
-  const { blurb, categories, slug, title, defaultProductVariant } = props.data
-  const { images } = defaultProductVariant
+  const { blurb, slug, title, defaultProductVariant } = props.data
+  const { images, price } = defaultProductVariant
+  const priceTitle = defaultProductVariant.title
   const itemHasImage = images.length
   return (
     <Link to={`/menu/${slug.current}`}>
@@ -20,10 +21,10 @@ const MenuItem = props => {
         <div className="item__content">
           <h3>{title}</h3>
           <p>{blurb}</p>
-          <div className="categories">
-            {categories.map(({ title }) => (
-              <span>{title}</span>
-            ))}
+          <div className="mt-auto price">
+            <span>
+              {priceTitle} ~ ${price}
+            </span>
           </div>
         </div>
       </Item>
@@ -33,13 +34,13 @@ const MenuItem = props => {
 
 export default MenuItem
 
-const { boxShadow, borderRadius, boxShadowSubtle } = reusable
+const { boxShadow, borderRadius, boxShadowSubtle, boxShadowHarsh } = reusable
 const Item = Styled.div`
   border-radius: ${borderRadius};
   box-shadow: ${boxShadow};
   padding: 8px;
   background-color: white;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   display: flex;
   height: 100%;
   transition: all .25s;
@@ -49,22 +50,33 @@ const Item = Styled.div`
   }
 
   &:hover {
-	  box-shadow: ${boxShadowSubtle};
+	  box-shadow: ${boxShadowHarsh};
 	  transition: all .25s;
   }
 
   .item__content {
-	  padding-left: 16px;
+	  padding: 8px 0 0 16px;
+	  display: flex;
+	  flex-direction: column;
 	  h3 {
-		  font-size: 1.15rem;
+		  font-size: 14px;
 		  font-weight: 500;
 		  color: ${colors.eerieBlack};
 		  margin-bottom: 4px;
+		  @media (min-width: ${breakpoints.tablet}) {
+			font-size: 18px;
+			margin-bottom: 8px;
+  		  }
+		  
 	  }
 	  p {
 		  color: #272727;
 		  font-family: ${font.text};
-		  font-size: .75rem;
+		  font-size: 12px;
+		  line-height: 1.25;
+	  }
+	  .mt-auto {
+		  margin-top: auto;
 	  }
 	  .categories {
 		  span {
@@ -77,6 +89,14 @@ const Item = Styled.div`
 			  padding: 4px 8px;
 			  border-radius: ${borderRadius};
 			  background-color: ${colors.primary};
+		  }
+	  }
+	  .price {
+		  span {
+			  font-size: 12px;
+			  font-weight: 900;
+			  font-family: ${font.text};
+			  color: ${colors.primary};
 		  }
 	  }
   }

@@ -24,6 +24,17 @@ exports.createPages = async ({ graphql, actions }) => {
                 }
               }
             }
+            variants {
+              price
+              taxable
+              title
+              images {
+                asset {
+                  url
+                  size
+                }
+              }
+            }
             categories {
               title
             }

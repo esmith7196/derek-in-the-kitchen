@@ -15,8 +15,9 @@ export const colors = {
 }
 
 export const reusable = {
-  boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-  boxShadowSubtle: "rgba(0, 0, 0, 0.35) 0px 5px 30px",
+  boxShadow: "rgba(0, 0, 0, 0.11) 0px 5px 15px",
+  boxShadowSubtle: "rgba(0, 0, 0, 0.11) 0px 5px 30px",
+  boxShadowSharp: "rgba(0, 0, 0, 0.45) 0px 5px 30px",
   borderRadius: "30px",
 }
 
@@ -29,6 +30,6 @@ export const breakpoints = {
 }
 
 export const font = {
-  text: `'Raleway', cursive;`,
+  text: `'Open Sans', sans-serif;`,
   primary: `'Dancing Script', cursive`,
 }

@@ -12,6 +12,7 @@ import { breakpoints, colors, font } from "../style/constants"
 import { Link } from "gatsby"
 import Container from "../components/UI/Container"
 import ItemForm from "../components/contact/ItemForm"
+import Price from "../components/Price"
 
 const MenuItemTemplate = ({ pageContext }) => {
   const {
@@ -22,17 +23,18 @@ const MenuItemTemplate = ({ pageContext }) => {
     categories,
     defaultProductVariant,
     slug,
+    variants,
   } = pageContext
   const { images } = defaultProductVariant
   const itemHasImage = images.length
   return (
-    <Layout>
+    <Layout title={title} description={blurb}>
       <Section>
         <Container size={"1200px"}>
           <Button bold>
             <Link to="/menu">
               <Flex>
-                <MdOutlineArrowBack /> <span>Back To Menu</span>
+                <MdOutlineArrowBack size={24} /> <span>Back To Menu</span>
               </Flex>
             </Link>
           </Button>
@@ -50,7 +52,11 @@ const MenuItemTemplate = ({ pageContext }) => {
 
             <div className="text-container">
               <Title>{title}</Title>
-              <CategoriesRender categories={categories} />
+              <Price
+                variants={variants}
+                defaultProductVariant={defaultProductVariant}
+              />
+              {/* <CategoriesRender categories={categories} /> */}
               <Blurb>{blurb}</Blurb>
               <BodyContainer>
                 <BlockContent blocks={body._rawEn} />
@@ -72,6 +78,9 @@ const Flex = Styled.div`
 
 	span {
 		margin-left: 8px;
+		    font-weight: bold;
+    font-family: Open Sans;
+    font-size: 14px;
 	}
 	
 `
