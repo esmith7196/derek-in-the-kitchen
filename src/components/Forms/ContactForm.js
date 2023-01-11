@@ -1,11 +1,12 @@
-import React from "react"
-import styled from "styled-components"
-import { colors, reusable, breakpoints } from "../../style/constants"
-import Button from "../UI/Button"
+import React from 'react';
+import styled from 'styled-components';
+import { colors, reusable, breakpoints } from '../../style/constants';
+import Button from '../UI/Button';
 
 const ContactForm = () => {
   return (
     <Form name="contact" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact" />
       <p>
         <label>
           Your Name: <input type="text" name="name" />
@@ -27,10 +28,10 @@ const ContactForm = () => {
         </Button>
       </p>
     </Form>
-  )
-}
+  );
+};
 
-export default ContactForm
+export default ContactForm;
 
 const Form = styled.form`
   padding: 16px;
@@ -63,4 +64,4 @@ const Form = styled.form`
     padding: 8px;
     outline: none;
   }
-`
+`;
